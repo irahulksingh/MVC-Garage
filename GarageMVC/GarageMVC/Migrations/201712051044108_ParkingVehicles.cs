@@ -3,7 +3,7 @@ namespace GarageMVC.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class ParkingDetails : DbMigration
+    public partial class ParkingVehicles : DbMigration
     {
         public override void Up()
         {

@@ -15,33 +15,13 @@ namespace GarageMVC.Controllers
     {
         private DatabaseConnection db = new DatabaseConnection();
 
-        // GET: VehiclesModels
-        public ActionResult Index(string sortOrder)
+        GET: VehiclesModels
+        public ActionResult Index()
         {
-            ViewBag.NameSortParm = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
-            ViewBag.DateSortParm = sortOrder == "Date" ? "date_desc" : "Date";
-            var students = from s in db.VehiclesModels
-                           select s;
-            switch (sortOrder)
-            {
-                case "name_desc":
-                    vehicles = vehicles.OrderByDescending(v => v.LastName);
-                    break;
-                case "Date":
-                    vehicles = vehicles.OrderBy(v => v.ChechInTime);
-                    break;
-                case "date_desc":
-                    vehicles = vehicles.OrderByDescending(s => s.ChechInTime);
-                    break;
-                default:
-                    vehicles = vehicles.OrderBy(s => s.LastName);
-                    break;
-            }
-            return View(vehicles.ToList());
+            return View(db.VehiclesModel.ToList());
         }
-                      
 
-        // GET: VehiclesModels/Details/5
+        GET: VehiclesModels/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
