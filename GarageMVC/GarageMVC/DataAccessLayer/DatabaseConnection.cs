@@ -13,5 +13,6 @@ namespace GarageMVC.DataAccessLayer
 
         public System.Data.Entity.DbSet<GarageMVC.Models.VehiclesModel> VehiclesModel { get; set; }
 
+        //public System.Data.Entity.DbSet<GarageMVC.Models.ViewModel.VehiclesInGarage> VehiclesInGarages { get; set; }
     }
 }

@@ -8,6 +8,7 @@ using System.Web;
 using System.Web.Mvc;
 using GarageMVC.DataAccessLayer;
 using GarageMVC.Models;
+//using GarageMVC.Models.ViewModel;
 
 namespace GarageMVC.Controllers
 {
@@ -20,6 +21,18 @@ namespace GarageMVC.Controllers
         {
             return View(db.VehiclesModel.ToList());
         }
+
+
+        //public ActionResult ParkedVehicles()
+        //{
+        //    List<VehiclesInGarage> ModelVehicles = new List<VehiclesInGarage>();
+        //    foreach(var p in db.VehiclesModel.Select(x=>x.ID != 0))
+        //    {
+        //        ModelVehicles.Add(new VehiclesInGarage(p));
+        //    }
+        //    return View(ModelVehicles);
+        //}
+
 
         // GET: VehiclesModels/Details/5
         public ActionResult Details(int? id)

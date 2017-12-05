@@ -21,7 +21,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.RegNo)
+            @Html.Display("Registration No.")
         </dt>
 
         <dd>
@@ -68,13 +68,16 @@
             @Html.DisplayFor(model => model.CheckInTime)
         </dd>
 
-        <dt>
+        @*<dt>
             @Html.DisplayNameFor(model => model.CheckOutTime)
-        </dt>
-
+        </dt>*@
         <dd>
-            @Html.DisplayFor(model => model.CheckOutTime)
+            @Html.LabelFor(model => model.CheckOutTime, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.TextBoxFor(model => model.CheckOutTime, new { @Value = @DateTime.Now.ToString("MM/dd/yyyy HH:mm") })
         </dd>
+                       
+            @*@Html.DisplayFor(model => model.CheckOutTime)*@
+        @*</dd>*@
 
     </dl>
 
