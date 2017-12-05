@@ -4,7 +4,7 @@
     ViewBag.Title = "Create";
 }
 
-<h2>Create</h2>
+<h2>Check In</h2>
 
 
 @using (Html.BeginForm()) 
@@ -18,7 +18,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.Type, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Type, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EnumDropDownListFor(model => model.Type, htmlAttributes: new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.Type, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -27,7 +27,24 @@
             @Html.LabelFor(model => model.RegNo, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.RegNo, new { htmlAttributes = new { @class = "form-control" } })
+               @*@Html.Display("Registration No.", RegNo);*@
                 @Html.ValidationMessageFor(model => model.RegNo, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Color, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EnumDropDownListFor(model => model.Color, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.Color, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Model, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Model, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Model, "", new { @class = "text-danger" })
             </div>
         </div>
 
@@ -48,20 +65,20 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.TimeIn, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.CheckInTime, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.TimeIn, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.TimeIn, "", new { @class = "text-danger" })
+                @Html.TextBoxFor(model => model.CheckInTime, new {  @Value = @DateTime.Now.ToShortDateString()  })
+                @*@Html.ValidationMessageFor(model => model.CheckInTime, "", new { @class = "text-danger" })*@
             </div>
         </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.TimeOut, htmlAttributes: new { @class = "control-label col-md-2" })
+        @*<div class="form-group">
+            @Html.LabelFor(model => model.CheckOutTime, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.TimeOut, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.TimeOut, "", new { @class = "text-danger" })
-            </div>
-        </div>
+                @Html.EditorFor(model => model.CheckOutTime, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.CheckOutTime, "", new { @class = "text-danger" })
+            </div>*@
+        @*</div>*@
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">

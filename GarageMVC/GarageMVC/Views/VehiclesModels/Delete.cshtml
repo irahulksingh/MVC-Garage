@@ -4,9 +4,10 @@
     ViewBag.Title = "Delete";
 }
 
-<h2>Delete</h2>
+<h2>Check Out</h2>
 
-<h3>Are you sure you want to delete this?</h3>
+<h3>Are you sure you want to<b> check out </b>your <b>@Html.DisplayFor(model => model.Type)</b> 
+    with registration no. <b>@Html.DisplayFor(model => model.RegNo)</b> ?</h3>
 <div>
     <h4>VehiclesModel</h4>
     <hr />
@@ -28,6 +29,22 @@
         </dd>
 
         <dt>
+            @Html.DisplayNameFor(model => model.Color)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Color)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Model)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Model)
+        </dd>
+
+        <dt>
             @Html.DisplayNameFor(model => model.Brand)
         </dt>
 
@@ -44,19 +61,19 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.TimeIn)
+            @Html.DisplayNameFor(model => model.CheckInTime)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.TimeIn)
+            @Html.DisplayFor(model => model.CheckInTime)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.TimeOut)
+            @Html.DisplayNameFor(model => model.CheckOutTime)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.TimeOut)
+            @Html.DisplayFor(model => model.CheckOutTime)
         </dd>
 
     </dl>
@@ -65,7 +82,7 @@
         @Html.AntiForgeryToken()
 
         <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-default" /> |
+            <input type="submit" value="Check Out" class="btn btn-default" /> |
             @Html.ActionLink("Back to List", "Index")
         </div>
     }

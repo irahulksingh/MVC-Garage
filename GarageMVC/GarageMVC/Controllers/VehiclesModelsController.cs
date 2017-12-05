@@ -47,7 +47,7 @@ namespace GarageMVC.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ID,Type,RegNo,Brand,NoOfWheels,TimeIn,TimeOut")] VehiclesModel vehiclesModel)
+        public ActionResult Create([Bind(Include = "ID,Type,RegNo,Color,Model,Brand,NoOfWheels,CheckInTime,CheckOutTime")] VehiclesModel vehiclesModel)
         {
             if (ModelState.IsValid)
             {
@@ -79,7 +79,7 @@ namespace GarageMVC.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ID,Type,RegNo,Brand,NoOfWheels,TimeIn,TimeOut")] VehiclesModel vehiclesModel)
+        public ActionResult Edit([Bind(Include = "ID,Type,RegNo,Color,Model,Brand,NoOfWheels,CheckInTime,CheckOutTime")] VehiclesModel vehiclesModel)
         {
             if (ModelState.IsValid)
             {

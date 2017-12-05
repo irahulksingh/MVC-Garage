@@ -1,13 +1,13 @@
 ﻿@model IEnumerable<GarageMVC.Models.VehiclesModel>
 
 @{
-    ViewBag.Title = "Parking Lot no.1";
+    ViewBag.Title = "Parking";
 }
 
-<h2>Parking Lot</h2>
+<h2>Check In</h2>
 
 <p>
-    @Html.ActionLink("Park New Vehicle", "Create")
+    @Html.ActionLink("Check In Vehicle", "Create")
 </p>
 <table class="table">
     <tr>
@@ -18,16 +18,22 @@
             @Html.DisplayNameFor(model => model.RegNo)
         </th>
         <th>
+            @Html.DisplayNameFor(model => model.Color)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Model)
+        </th>
+        <th>
             @Html.DisplayNameFor(model => model.Brand)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.NoOfWheels)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.TimeIn)
+            @Html.DisplayNameFor(model => model.CheckInTime)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.TimeOut)
+            @Html.DisplayNameFor(model => model.CheckOutTime)
         </th>
         <th></th>
     </tr>
@@ -38,7 +44,14 @@
             @Html.DisplayFor(modelItem => item.Type)
         </td>
         <td>
+            @*@string RegNo = Registration Number;*@
             @Html.DisplayFor(modelItem => item.RegNo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Color)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Model)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Brand)
@@ -47,15 +60,15 @@
             @Html.DisplayFor(modelItem => item.NoOfWheels)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.TimeIn)
+            @Html.DisplayFor(modelItem => item.CheckInTime)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.TimeOut)
+            @Html.DisplayFor(modelItem => item.CheckOutTime)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
-            @Html.ActionLink("Unpark", "Delete", new { id=item.ID })
+            @Html.ActionLink("Modify Vehicle Details", "Edit", new { id=item.ID }) |
+            @Html.ActionLink("Details of the Vehicle", "Details", new { id=item.ID }) |
+            @Html.ActionLink("CheckOut Vehicle", "Delete", new { id=item.ID })
         </td>
     </tr>
 }
