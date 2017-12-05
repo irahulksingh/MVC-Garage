@@ -22,6 +22,15 @@ namespace GarageMVC.Controllers
             return View(db.VehiclesModel.ToList());
         }
 
+        public ActionResult ParkedVehicles()
+        {
+            List<VehiclesInGarage> MdVeh = new List<VehiclesInGarage>();
+            foreach (var v in db.VehiclesModel.Where(no=> no.NoOfWheels >=0))
+            {
+                MdVeh.Add(new VehiclesInGarage(v));
+            }
+            return View(MdVeh);
+        }
 
         //public ActionResult CalculateTimeandCost( int ? ID)
         //{

@@ -183,9 +183,11 @@
     <Content Include="Views\VehiclesModels\Details.cshtml" />
     <Content Include="Views\VehiclesModels\Edit.cshtml" />
     <Content Include="Views\VehiclesModels\Index.cshtml" />
+    <Content Include="Views\VehiclesModels\ParkedVehicles.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="images\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
