@@ -8,7 +8,7 @@ using System.Web;
 using System.Web.Mvc;
 using GarageMVC.DataAccessLayer;
 using GarageMVC.Models;
-//using GarageMVC.Models.ViewModel;
+using GarageMVC.Models.ViewModel;
 
 namespace GarageMVC.Controllers
 {
@@ -23,16 +23,13 @@ namespace GarageMVC.Controllers
         }
 
 
-        //public ActionResult ParkedVehicles()
+        //public ActionResult CalculateTimeandCost( int ? ID)
         //{
-        //    List<VehiclesInGarage> ModelVehicles = new List<VehiclesInGarage>();
-        //    foreach(var p in db.VehiclesModel.Select(x=>x.ID != 0))
-        //    {
-        //        ModelVehicles.Add(new VehiclesInGarage(p));
-        //    }
-        //    return View(ModelVehicles);
-        //}
+        //    VehiclesModel vehmod = db.VehiclesModel.Find(ID);
+        //    TimeSpan TotalTime = (vehmod.CheckOutTime - vehmod.CheckInTime);
 
+        //    return View(TotalTime);
+        //}
 
         // GET: VehiclesModels/Details/5
         public ActionResult Details(int? id)
