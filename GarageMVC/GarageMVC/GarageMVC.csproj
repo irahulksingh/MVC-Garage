@@ -138,6 +138,14 @@
     <Compile Include="Migrations\201712051306584_ParkingDetails.Designer.cs">
       <DependentUpon>201712051306584_ParkingDetails.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201712060803001_ParkedVehicles1.cs" />
+    <Compile Include="Migrations\201712060803001_ParkedVehicles1.Designer.cs">
+      <DependentUpon>201712060803001_ParkedVehicles1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201712060808594_ParkedVehicles2.cs" />
+    <Compile Include="Migrations\201712060808594_ParkedVehicles2.Designer.cs">
+      <DependentUpon>201712060808594_ParkedVehicles2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\VehiclesModel.cs" />
     <Compile Include="Models\ViewModel\VehiclesInGarage.cs" />
@@ -200,6 +208,12 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201712051306584_ParkingDetails.resx">
       <DependentUpon>201712051306584_ParkingDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712060803001_ParkedVehicles1.resx">
+      <DependentUpon>201712060803001_ParkedVehicles1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712060808594_ParkedVehicles2.resx">
+      <DependentUpon>201712060808594_ParkedVehicles2.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

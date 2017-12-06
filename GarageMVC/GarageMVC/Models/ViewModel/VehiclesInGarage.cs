@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel;
 
 namespace GarageMVC.Models.ViewModel
 {
@@ -10,6 +12,7 @@ namespace GarageMVC.Models.ViewModel
         private bool p;
 
         public int ID { get; set; }
+        [DisplayName("Registration No.")]
         public string RegNo { get; set; }
         public string Brand { get; set; }
         public string Model { get; set; }
