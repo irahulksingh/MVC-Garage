@@ -130,6 +130,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\SearchController.cs" />
+    <Compile Include="Controllers\SortingController.cs" />
     <Compile Include="Controllers\VehiclesModelsController.cs" />
     <Compile Include="DataAccessLayer\DatabaseConnection.cs" />
     <Compile Include="Global.asax.cs">
@@ -210,6 +211,11 @@
     <Content Include="Views\VehiclesModels\Index.cshtml" />
     <Content Include="Views\VehiclesModels\ParkedVehicles.cshtml" />
     <Content Include="Views\Search\Index.cshtml" />
+    <Content Include="Views\Sorting\Create.cshtml" />
+    <Content Include="Views\Sorting\Delete.cshtml" />
+    <Content Include="Views\Sorting\Details.cshtml" />
+    <Content Include="Views\Sorting\Edit.cshtml" />
+    <Content Include="Views\Sorting\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
