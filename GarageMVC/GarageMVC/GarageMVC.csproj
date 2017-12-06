@@ -146,6 +146,22 @@
     <Compile Include="Migrations\201712060808594_ParkedVehicles2.Designer.cs">
       <DependentUpon>201712060808594_ParkedVehicles2.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201712060827047_ParkedVehicles3.cs" />
+    <Compile Include="Migrations\201712060827047_ParkedVehicles3.Designer.cs">
+      <DependentUpon>201712060827047_ParkedVehicles3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201712060832350_ParkedVehicles4.cs" />
+    <Compile Include="Migrations\201712060832350_ParkedVehicles4.Designer.cs">
+      <DependentUpon>201712060832350_ParkedVehicles4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201712060834555_ParkedVehicles5.cs" />
+    <Compile Include="Migrations\201712060834555_ParkedVehicles5.Designer.cs">
+      <DependentUpon>201712060834555_ParkedVehicles5.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201712060838164_ParkedVehicles6.cs" />
+    <Compile Include="Migrations\201712060838164_ParkedVehicles6.Designer.cs">
+      <DependentUpon>201712060838164_ParkedVehicles6.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\VehiclesModel.cs" />
     <Compile Include="Models\ViewModel\VehiclesInGarage.cs" />
@@ -214,6 +230,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201712060808594_ParkedVehicles2.resx">
       <DependentUpon>201712060808594_ParkedVehicles2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712060827047_ParkedVehicles3.resx">
+      <DependentUpon>201712060827047_ParkedVehicles3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712060832350_ParkedVehicles4.resx">
+      <DependentUpon>201712060832350_ParkedVehicles4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712060834555_ParkedVehicles5.resx">
+      <DependentUpon>201712060834555_ParkedVehicles5.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712060838164_ParkedVehicles6.resx">
+      <DependentUpon>201712060838164_ParkedVehicles6.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

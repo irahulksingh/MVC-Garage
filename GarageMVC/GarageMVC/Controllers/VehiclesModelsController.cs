@@ -22,10 +22,34 @@ namespace GarageMVC.Controllers
             return View(db.VehiclesModel.ToList());
         }
 
+        //public ActionResult Index(string s,string q)
+        //{
+        //    //var vehicles = from r in db.VehiclesModel select r;
+        //    //int id = Convert.ToInt32(Request["search type"]);
+        //    //var SearchParameter = "Searching";
+
+        //    //if (!string.IsNullOrWhiteSpace(s))
+        //    //{
+        //    //    switch (id)
+        //    //    {
+        //    //        case 0:
+        //    //            int Type = int.Parse(s)
+        //    //                vehicles = vehicles.Where(r => r.ID.Equals(Type));
+        //    //            SearchParameter += "ID for' " + s + "'";
+        //    //            break;
+        //    //        default:
+        //    //            break;
+        //    //    }
+
+        //    }
+
+        //    return View(vehicles);
+
+        //}
         public ActionResult ParkedVehicles()
         {
             List<VehiclesInGarage> MdVeh = new List<VehiclesInGarage>();
-            foreach (var v in db.VehiclesModel.Where(no=> no.NoOfWheels >=0))
+            foreach (var v in db.VehiclesModel.Where(no=> no.NoOfWheels >= 0))
             {
                 MdVeh.Add(new VehiclesInGarage(v));
             }

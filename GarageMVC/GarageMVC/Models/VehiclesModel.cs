@@ -14,28 +14,24 @@ namespace GarageMVC.Models
         public Type Type { get; set; }
         [DisplayName("Registration No.")]
         [Required(ErrorMessage = "An Registration No. is required")]
+        [RegularExpression(@"^[a-zA-Z0-9'' ']+$", ErrorMessage = "Special character should not be entered")]
         public string RegNo { get; set; }
-        
-        public color  Color { get; set; }
+
+        public color Color { get; set; }
         [Required(ErrorMessage = "An Model is required")]
+        [RegularExpression(@"^[a-zA-Z0-9'' ']+$", ErrorMessage = "Special character should not be entered")]
         public string Model { get; set; }
         [Required(ErrorMessage = "An Brand is required")]
+        [RegularExpression(@"^[a-zA-Z0-9'' ']+$", ErrorMessage = "Special character should not be entered")]
         public string Brand { get; set; }
-        //[Required(ErrorMessage = "An Brand Number is required")]
+        [Range(0, Int32.MaxValue, ErrorMessage = "Value should be greater than or equal to 0")]
         [DisplayName("No. Of Wheels")]
         public int NoOfWheels { get; set; }
         [DisplayName("Parked In")]
         public DateTime CheckInTime { get; set; }
+        [DisplayName("Parked Out")]
         public DateTime CheckOutTime { get; set; }
-          
-        //public VehiclesModel( DateTime? CheckIn)
-        //{
-        //    //CheckInTime = DateTime.Now;
-        //    //CheckOutTime = DateTime.Now;
-        //    this.CheckInTime = CheckIn ?? DateTime.Now;
-        //}
-       }
-
+    }
 
     public enum Type
     {
@@ -44,7 +40,7 @@ namespace GarageMVC.Models
         Bus,
         Boat,
         Airplane,
-        Motorcycle       
+        Motorcycle
     }
     public enum color
     {
