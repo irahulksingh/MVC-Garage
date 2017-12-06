@@ -16,9 +16,83 @@ namespace GarageMVC.Controllers
         private DatabaseConnection db = new DatabaseConnection();
 
         // GET: VehiclesModels
-        public ActionResult Index()
+        public ViewResult Index(string sortOrder, string searchString)
         {
-            return View(db.VehiclesModel.ToList());
+            ViewBag.TypeSortParm = String.IsNullOrEmpty(sortOrder) ? "type_desc" : "";
+            ViewBag.RegNoSortParm = String.IsNullOrEmpty(sortOrder) ? "regNo_desc" : "";
+            ViewBag.ColorSortParm = String.IsNullOrEmpty(sortOrder) ? "color_desc" : "";
+            ViewBag.BrandSortParm = String.IsNullOrEmpty(sortOrder) ? "brand_desc" : "";
+            ViewBag.ModelSortParm = String.IsNullOrEmpty(sortOrder) ? "model_desc" : "";
+            ViewBag.NoOfWheelsSortParm = sortOrder == "Int" ? "noOfWheels_desc" : "Int";
+            ViewBag.CheckInTimeSortParm = sortOrder == "CheckInTime" ? "checkInTime_desc" : "CheckInTime";
+            ViewBag.CheckOutTimeSortParm = sortOrder == "CheckOutTime" ? "checktOutTime_desc" : "CheckOutTime";
+            var vehicles = from v in db.VehiclesModel
+                           select v;
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                vehicles = vehicles.Where(v => 
+                    v.RegNo.Contains(searchString)
+                 || v.Type.Equals(searchString)
+                 || v.Color.Equals(searchString)
+                 || v.Brand.Contains(searchString)
+                 || v.Model.Contains(searchString)
+                 || v.NoOfWheels.Equals(searchString)
+                 || v.CheckInTime.Equals(searchString)
+                 || v.CheckOutTime.Equals(searchString));
+
+            }                         
+                switch (sortOrder)
+            {
+                case "regNo_desc":
+                    vehicles = vehicles.OrderByDescending(v => v.RegNo);
+                    break;
+                case "Type":
+                    vehicles = vehicles.OrderBy(v => v.Type);
+                    break;
+                case "type_desc":
+                    vehicles = vehicles.OrderByDescending(v => v.Type);
+                    break;
+                case "CheckInTime":
+                    vehicles = vehicles.OrderBy(v => v.CheckInTime);
+                    break;
+                case "checkInTime_desc":
+                    vehicles = vehicles.OrderByDescending(v => v.CheckInTime);
+                    break;
+                case "CheckOutTime":
+                    vehicles = vehicles.OrderBy(v => v.CheckOutTime);
+                    break;
+                case "checkOutTime_desc":
+                    vehicles = vehicles.OrderByDescending(v => v.CheckOutTime);
+                    break;
+                case "Color":
+                    vehicles = vehicles.OrderBy(v => v.Color);
+                    break;
+                case "color_desc":
+                    vehicles = vehicles.OrderByDescending(v => v.Color);
+                    break;
+                case "Brand":
+                    vehicles = vehicles.OrderBy(v => v.Brand);
+                    break;
+                case "brand_desc":
+                    vehicles = vehicles.OrderByDescending(v => v.Brand);
+                    break;
+                case "Model":
+                    vehicles = vehicles.OrderBy(v => v.Model);
+                    break;
+                case "model_desc":
+                    vehicles = vehicles.OrderByDescending(v => v.Model);
+                    break;
+                case "NoOfWheels":
+                    vehicles = vehicles.OrderBy(v => v.NoOfWheels);
+                    break;
+                case "noOfWheels_desc":
+                    vehicles = vehicles.OrderByDescending(v => v.NoOfWheels);
+                    break;
+                default:
+                    vehicles = vehicles.OrderBy(v => v.RegNo);
+                    break;
+            }
+            return View(vehicles.ToList());
         }
 
         // GET: VehiclesModels/Details/5

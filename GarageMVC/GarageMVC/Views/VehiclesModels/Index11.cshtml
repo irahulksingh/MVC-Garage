@@ -1,17 +1,21 @@
-﻿@model IEnumerable<GarageMVC.Models.VehiclesModel>
+﻿@model GarageMVC.Models.VehiclesModel
 
 @{
-    ViewBag.Title = "Parking";
+    ViewBag.Title = "Search and Sort";
 }
 
-<h2>Check In</h2>
-<h3>Search by</h3>
-
+<h2>Search by</h2>
 <p>
-    @Html.ActionLink("Check In Vehicle", "Create")
+    @Html.ActionLink("Search a Vehicle", "Search")
 </p>
 
-
+@using (Html.BeginForm())
+{
+    <p>
+        Find by name: @Html.TextBox("SearchString")
+        <input type="submit" value="Search" />
+    </p>
+}
 <table class="table">
     <tr>
         <th>
@@ -78,3 +82,4 @@
     }
 
 </table>
+
