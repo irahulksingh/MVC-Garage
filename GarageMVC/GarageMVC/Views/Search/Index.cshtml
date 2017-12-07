@@ -24,8 +24,8 @@
             <input type="submit" value="Search" class="btn btn-info" />
         </div>
     }
-  
-<table class="table">
+  <br />
+<table  class="table table-striped table-bordered" cellspacing="0" >
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.Type)
@@ -74,17 +74,17 @@
         <td>
             @Html.DisplayFor(modelItem => item.NoOfWheels)
         </td>
-        <td>
+        @*<td>
             @Html.DisplayFor(modelItem => item.CheckInTime)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.CheckOutTime)
-        </td>
-        @*<td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
         </td>*@
+        @*<td>*@
+            @*@Html.ActionLink("Edit", "Edit", new { id=item.ID }) |*@
+            @*@Html.ActionLink("Details", "Details", new { id=item.ID }) |*@
+            @*@Html.ActionLink("Check Out Vehicle", "Delete", new { id=item.ID })*@
+        @*</td>*@
     </tr>
 }
 

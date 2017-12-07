@@ -16,28 +16,45 @@ namespace GarageMVC.Controllers
         private DatabaseConnection db = new DatabaseConnection();
 
         // GET: Sorting
-        //public ActionResult Index(string sortOrder, string CurrentSort, int? page)
-        //{
-        //    ApplicationDbContext db = new ApplicationDbContext();
-        //    int pageSize = 10;
-        //    int pageIndex = 1;
-        //    pageIndex = page.HasValue ? Convert.ToInt32(page) : 1;
-        //    ViewBag.CurrentSort = sortOrder;
-        //    sortOrder = String.IsNullOrEmpty(sortOrder) ? "Name" : sortOrder;
-        //    IPagedList<EmployeeMaster> employees = null;
-        //    switch (sortOrder)
-        //    {
-        //        case "Name":
-        //            if (sortOrder.Equals(CurrentSort))
-        //                employees = db.Employees.OrderByDescending
-        //                        (m => m.Name).ToPagedList(pageIndex, pageSize);
-        //            else
-        //                employees = db.Employees.OrderBy
-        //                        (m => m.Name).ToPagedList(pageIndex, pageSize);
-        //            break;
+        public ActionResult Index(string sortingCriteria)
+        {
+            List<GarageMVC.Models.VehiclesModel> VehicleType;
+            switch (sortingCriteria)
+            {
+                case "Type":
+                    VehicleType = db.VehiclesModel.OrderByDescending(t => t.Type.ToString()).ToList();
+                    break;
+                case "Color":
+                    VehicleType = db.VehiclesModel.OrderByDescending(t => t.Color.ToString()).ToList();
+                    break;
+                case "Model":
+                    VehicleType = db.VehiclesModel.OrderByDescending(t => t.Model).ToList();
+                    break;
+                case "Brand":
+                    VehicleType = db.VehiclesModel.OrderByDescending(t => t.Brand).ToList();
+                    break;
+                default:
+                    VehicleType = db.VehiclesModel.OrderBy(t => t.Color).ToList();
 
-        //    }
-        // GET: Sorting/Details/5
+                    break;
+            }
+
+            return View(VehicleType);
+
+        }
+        //public ActionResult Paging()
+        //{
+        //    ViewBag.CurrentPage = 1;
+        //    return View("Index",db.VehiclesModel.Take(5));
+        //}
+        //public ActionResult Paging(int CurrentPage)
+        //{
+        //    ViewBag.CurrentPage = CurrentPage;
+        //    return View("Index", db.VehiclesModel.Skip((CurrentPage - 1) * 5).Take(5));
+
+
+        //}
+                // GET: Sorting/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)

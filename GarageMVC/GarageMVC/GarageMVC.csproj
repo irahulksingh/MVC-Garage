@@ -211,6 +211,7 @@
     <Content Include="Views\VehiclesModels\Index.cshtml" />
     <Content Include="Views\VehiclesModels\ParkedVehicles.cshtml" />
     <Content Include="Views\Search\Index.cshtml" />
+    <Content Include="Views\Sorting\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

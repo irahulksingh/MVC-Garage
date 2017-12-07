@@ -1,0 +1,34 @@
+﻿@model IEnumerable<GarageMVC.Models.VehiclesModel>
+@{
+    ViewBag.Title = "Index";
+}
+<h2>Sorting</h2>
+<table class="table table-striped table-bordered">
+    <thead>
+        <tr>
+            <th>@Html.ActionLink("Type", "Index", new { sortingCriteria = "Type" })</th>
+
+            <th>@Html.ActionLink("Color", "Index", new { sortingCriteria = "Color" })</th>
+            <th>@Html.ActionLink("Model", "Index", new { sortingCriteria = "Model" })</th>
+            <th>@Html.ActionLink("Brand", "Index", new { sortingCriteria = "Brand" })</th>
+           
+    </thead>
+    <tbody>
+        @foreach (var vehicle in Model)
+        {
+            <tr>
+
+                <td>@vehicle.Type</td>
+               
+                <td>@vehicle.Color</td>
+                <td>@vehicle.Model</td>
+                <td>@vehicle.Brand</td>
+                          </tr>}
+    </tbody>
+
+
+
+
+</table> 
+<div>
+   
