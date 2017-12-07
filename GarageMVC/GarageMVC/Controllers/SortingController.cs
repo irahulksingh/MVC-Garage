@@ -16,31 +16,27 @@ namespace GarageMVC.Controllers
         private DatabaseConnection db = new DatabaseConnection();
 
         // GET: Sorting
-        public ActionResult Index(string SortOrder)
-        {
-            ViewBag.NameSortParm = String.IsNullOrEmpty(SortOrder) ? "name_desc" : "";
-            ViewBag.DateSortParm = SortOrder == "Date" ? "date_desc" : "Date";
-            var vehicle = from s in db.VehiclesModel
-                          select s;
-            switch (SortOrder)
-            {
-                case "name_desc":
-                    vehicle = vehicle.OrderByDescending(s => s.RegNo);
-                    break;
-                case "Date":
-                    vehicle = vehicle.OrderByDescending(s => s.Model);
-                    break;
-                case "date_desc":
-                    vehicle = vehicle.OrderByDescending(s => s.Brand);
-                    break;
-                default:
-                    vehicle = vehicle.OrderByDescending(s => s.Type);
-                    break;
-            }
-            return View(vehicle.ToList());
-            //return View(db.VehiclesModel.ToList());
-        }
+        //public ActionResult Index(string sortOrder, string CurrentSort, int? page)
+        //{
+        //    ApplicationDbContext db = new ApplicationDbContext();
+        //    int pageSize = 10;
+        //    int pageIndex = 1;
+        //    pageIndex = page.HasValue ? Convert.ToInt32(page) : 1;
+        //    ViewBag.CurrentSort = sortOrder;
+        //    sortOrder = String.IsNullOrEmpty(sortOrder) ? "Name" : sortOrder;
+        //    IPagedList<EmployeeMaster> employees = null;
+        //    switch (sortOrder)
+        //    {
+        //        case "Name":
+        //            if (sortOrder.Equals(CurrentSort))
+        //                employees = db.Employees.OrderByDescending
+        //                        (m => m.Name).ToPagedList(pageIndex, pageSize);
+        //            else
+        //                employees = db.Employees.OrderBy
+        //                        (m => m.Name).ToPagedList(pageIndex, pageSize);
+        //            break;
 
+        //    }
         // GET: Sorting/Details/5
         public ActionResult Details(int? id)
         {

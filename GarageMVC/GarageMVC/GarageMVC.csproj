@@ -211,11 +211,6 @@
     <Content Include="Views\VehiclesModels\Index.cshtml" />
     <Content Include="Views\VehiclesModels\ParkedVehicles.cshtml" />
     <Content Include="Views\Search\Index.cshtml" />
-    <Content Include="Views\Sorting\Create.cshtml" />
-    <Content Include="Views\Sorting\Delete.cshtml" />
-    <Content Include="Views\Sorting\Details.cshtml" />
-    <Content Include="Views\Sorting\Edit.cshtml" />
-    <Content Include="Views\Sorting\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
