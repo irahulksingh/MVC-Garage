@@ -163,24 +163,21 @@ namespace GarageMVC.Controllers
         public ActionResult DeleteConfirmed(int id)
         {
             VehiclesModel vehiclesModel = db.VehiclesModel.Find(id);
-
-
-
-
-
+            var TotalTimeandPrice = new Receipt();
+            TotalTimeandPrice.Type = vehiclesModel.Type.ToString();
+            TotalTimeandPrice.RegNo = vehiclesModel.RegNo;
+            TotalTimeandPrice.CheckIn = vehiclesModel.CheckInTime;
+            TotalTimeandPrice.Checkout = DateTime.Now;
+            TotalTimeandPrice.TotalTime = (DateTime.Now - vehiclesModel.CheckInTime);
+            TotalTimeandPrice.Price = 20;
 
             db.VehiclesModel.Remove(vehiclesModel);
           
-            //TimeSpan TotalTime = DateTime.Now - db.VehiclesModel.SingleOrDefault(c => c.ID == id).CheckInTime;
             db.SaveChanges();
-            return RedirectToAction("Index", "Receipts");
+            return View("DeleteConfirmed", TotalTimeandPrice);
 
 
-            //var CheckIn = db.Receipts.Where(c=>c.CheckIn)
-
-
-            /*eturn RedirectToAction("Index");*/
-        }
+                    }
 
         protected override void Dispose(bool disposing)
         {
@@ -190,5 +187,6 @@ namespace GarageMVC.Controllers
             }
             base.Dispose(disposing);
         }
+       
     }
 }

@@ -15,14 +15,12 @@ namespace GarageMVC.Models.ViewModel
         public TimeSpan TotalTime { get; set; }
         public int Price { get; set; }
 
-
         public Receipt()
         {
 
         }
 
         public Receipt(VehiclesModel VehicleRec)
-
         {
             ID = VehicleRec.ID;
             CheckIn = VehicleRec.CheckInTime;

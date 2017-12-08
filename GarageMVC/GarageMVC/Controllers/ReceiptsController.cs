@@ -18,7 +18,11 @@ namespace GarageMVC.Controllers
         // GET: Receipts
         public ActionResult Index()
         {
-            return View(db.Receipts.ToList());
+            var TT = new Receipt();
+            TT.Type =;
+            TT.RegNo = "Xyz";
+
+            return View(TT);
         }
 
         // GET: Receipts/Details/5
