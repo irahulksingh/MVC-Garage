@@ -16,6 +16,15 @@ namespace GarageMVC.Controllers
     {
         private DatabaseConnection db = new DatabaseConnection();
 
+
+
+        public ActionResult Redirect()
+        {
+            //return RedirectToAction("Receipt");
+            return Redirect("~/VehiclesModels/Receipts");
+
+        }
+
         // GET: VehiclesModels
         public ActionResult Index()
         {
@@ -154,9 +163,23 @@ namespace GarageMVC.Controllers
         public ActionResult DeleteConfirmed(int id)
         {
             VehiclesModel vehiclesModel = db.VehiclesModel.Find(id);
+
+
+
+
+
+
             db.VehiclesModel.Remove(vehiclesModel);
+          
+            //TimeSpan TotalTime = DateTime.Now - db.VehiclesModel.SingleOrDefault(c => c.ID == id).CheckInTime;
             db.SaveChanges();
-            return RedirectToAction("Index");
+            return RedirectToAction("Index", "Receipts");
+
+
+            //var CheckIn = db.Receipts.Where(c=>c.CheckIn)
+
+
+            /*eturn RedirectToAction("Index");*/
         }
 
         protected override void Dispose(bool disposing)
