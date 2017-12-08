@@ -4,14 +4,29 @@
     ViewBag.Title = "ParkedVehicles";
 }
 
-<h2>Parked Vehicles</h2>
+<h2>List of parked vehicles</h2>
+
+<p>
+    @Html.ActionLink("Search by", "Search")
+</p>
 
 
-@*<p>
-    @Html.ActionLink("Create New", "Create")
-</p>*@
 <table class="table">
-    <tr>
+   <tr>
+      @*  <th>
+            @Html.ActionLink("Vehicle Type", "Index", new { sortOrder = ViewBag.RegNoSortParm })
+        </th>
+        <th></th>
+    </tr>
+
+        @foreach (var items in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItems => items.RegNo)
+                </td>
+            </tr>
+         <tr>*@
         <th>
             @Html.DisplayNameFor(model => model.RegNo)
         </th>
@@ -24,23 +39,25 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.RegNo)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Brand)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Model)
-        </td>
-        @*<td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
-        </td>*@
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.RegNo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Brand)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Model)
+            </td>
+            @*<td>
+                    @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
+                    @Html.ActionLink("Details", "Details", new { id=item.ID }) |
+                    @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+                </td>*@
+        </tr>
+    }
 
 </table>
+
