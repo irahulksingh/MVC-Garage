@@ -26,7 +26,7 @@ namespace GarageMVC.Controllers
         }
 
         // GET: VehiclesModels
-        public ActionResult Index()
+        public ActionResult Index(int? page)
         {
             return View(db.VehiclesModel.ToList());
         }
@@ -163,25 +163,25 @@ namespace GarageMVC.Controllers
         public ActionResult DeleteConfirmed(int id)
         {
             VehiclesModel vehiclesModel = db.VehiclesModel.Find(id);
-            var TotalTimeandPrice = new Receipt();
-            TotalTimeandPrice.Type = vehiclesModel.Type.ToString();
-            TotalTimeandPrice.RegNo = vehiclesModel.RegNo;
-            TotalTimeandPrice.CheckIn = vehiclesModel.CheckInTime;
-            TotalTimeandPrice.Checkout = DateTime.Now;
-            TotalTimeandPrice.TotalTime = (DateTime.Now - vehiclesModel.CheckInTime);
-            double TTforCal = TotalTimeandPrice.TotalTime.TotalHours;
-            if(TTforCal <= 1)
-            {
-                TotalTimeandPrice.Price = 40;
-
-            }
-            else
-            {
-                TotalTimeandPrice.Price = 40*Convert.ToInt32(TTforCal);
-
-            }
-
+            var TotalTimeandPrice = new Receipt(vehiclesModel);
+            //TotalTimeandPrice.Type = vehiclesModel.Type.ToString();
+            //TotalTimeandPrice.RegNo = vehiclesModel.RegNo;
+            //TotalTimeandPrice.CheckIn = vehiclesModel.CheckInTime;
+            ////TotalTimeandPrice.Checkout = DateTime.Now;
+            //TotalTimeandPrice.TotalTime = (DateTime.Now - vehiclesModel.CheckInTime);
             
+            //double TTforCal = TotalTimeandPrice.TotalTime.TotalHours;
+            //if(TTforCal <= 1)
+            //{
+            //    TotalTimeandPrice.Price = 40;
+
+            //}
+            //else
+            //{
+            //    TotalTimeandPrice.Price = 20*Convert.ToInt32(TTforCal)+20;
+
+            //}
+                    
             db.VehiclesModel.Remove(vehiclesModel);
             db.SaveChanges();
             return View("DeleteConfirmed", TotalTimeandPrice);

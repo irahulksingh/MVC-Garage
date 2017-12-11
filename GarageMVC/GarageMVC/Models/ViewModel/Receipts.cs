@@ -23,7 +23,7 @@ namespace GarageMVC.Models.ViewModel
         [DisplayName("Registration No.:")]
         public string RegNo { get; set; }
 
-        [DisplayFormat(DataFormatString = "{0:hh\\:mm}", ApplyFormatInEditMode = true)]
+        [DisplayFormat(DataFormatString = "{0:hh}", ApplyFormatInEditMode = true)]
         //[DisplayFormat(DataFormatString = "{0:HH:mm}", ApplyFormatInEditMode = false)]
         [DisplayName("Total time in garage:")]
         public TimeSpan TotalTime { get; set; }
@@ -44,18 +44,26 @@ namespace GarageMVC.Models.ViewModel
             Type = VehicleRec.Type.ToString();
             RegNo = VehicleRec.RegNo;
             TotalTime = DateTime.Now - VehicleRec.CheckInTime;
-            TimeSpan Timeafter = new TimeSpan(00,01,00);
-            Price = 40;
-            //int TotalPrice = Convert.ToInt32(TotalTime - Timeafter);
-            //if (TotalTime >= Timeafter)
-            //{
-            //    Price = 40 * TotalPrice;
+            double TTforPricing = TotalTime.Hours;
+            if(TTforPricing <= 1)
+            {
+                Price = 40;
 
-            //}
-            //else
-            //{
-            //    
-            //}
+            }
+            else
+            {
+                Price = 20 * Convert.ToInt32(TTforPricing) + 20;
+
+            }
+
+
+            //TimeSpan Timeafter = new TimeSpan(00, 01, 00);
+            //Price = 40;
+            //Checkout = DateTime.Now;
+            //TotalTimeandPrice.TotalTime = (DateTime.Now - vehiclesModel.CheckInTime);
+            //double TTforCal = TotalTimeandPrice.TotalTime.TotalHours;
+            //if (
+
 
 
         }
