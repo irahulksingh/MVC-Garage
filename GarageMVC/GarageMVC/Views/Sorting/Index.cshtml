@@ -1,6 +1,6 @@
-﻿@model IEnumerable<GarageMVC.Models.VehiclesModel>
-@*@model PagedList.IPagedList<GarageMVC.Models.VehiclesModel>*@
-@*@using PagedList.Mvc;*@
+﻿@*@model IEnumerable<GarageMVC.Models.VehiclesModel>*@
+@model PagedList.IPagedList<GarageMVC.Models.VehiclesModel>
+@using PagedList.Mvc;
 @{
     ViewBag.Title = "Index";
     ViewBag.sortName = "Typesort";
@@ -25,7 +25,6 @@
             <tr>
 
                 <td>@vehicle.Type</td>
-               
                 <td>@vehicle.Color</td>
                 <td>@vehicle.Model</td>
                 <td>@vehicle.Brand</td>
@@ -36,9 +35,9 @@
 
 
 </table> 
-@*Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
 
 @Html.PagedListPager(Model, page => Url.Action("Index",
-    new { page, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter }))*@
+    new { page, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter }))
 
    

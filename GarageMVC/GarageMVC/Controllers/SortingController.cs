@@ -8,6 +8,7 @@ using System.Web;
 using System.Web.Mvc;
 using GarageMVC.DataAccessLayer;
 using GarageMVC.Models;
+using PagedList;
 
 namespace GarageMVC.Controllers
 {
@@ -16,12 +17,14 @@ namespace GarageMVC.Controllers
         private DatabaseConnection db = new DatabaseConnection();
 
         // GET: Sorting
-        public ActionResult Index(string sortingCriteria)
+        public ActionResult Index(string sortingCriteria, string currentFilter, string searchString, int? page)
         {
+            //ViewBag.CurrentSort = sortingCriteria;
             ViewBag.Typesort = sortingCriteria == "Type" ? "Type_Desc" : "Type";
             ViewBag.Colorsort = sortingCriteria == "Color" ? "Color_Desc" : "Color";
             ViewBag.Brandsort = sortingCriteria == "Brand" ? "Brand_Desc" : "Brand";
             ViewBag.Modelsort = sortingCriteria == "Model" ? "Model_Desc" : "Model";
+
 
             List<GarageMVC.Models.VehiclesModel> VehicleType;
             switch (sortingCriteria)
@@ -56,9 +59,25 @@ namespace GarageMVC.Controllers
                     break;
             }
 
-            return View(VehicleType);
+            if (searchString != null)
+            {
+                page = 1;
+            }
+            else
+            {
+                searchString = currentFilter;
+            }
 
+            ViewBag.CurrentFilter = searchString;
+            int pageSize = 10;
+            int pageNumber = (page ?? 1);
+            return View(VehicleType.OrderBy(i => i.Type).ToPagedList(page ?? 1, 10));
         }
+       
+
+            //return View(VehicleType);
+
+     
         //public ActionResult Paging()
         //{
         //    ViewBag.CurrentPage = 1;
