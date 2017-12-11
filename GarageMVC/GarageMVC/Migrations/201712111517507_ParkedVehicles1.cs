@@ -8,6 +8,20 @@ namespace GarageMVC.Migrations
         public override void Up()
         {
             CreateTable(
+                "dbo.Receipts",
+                c => new
+                    {
+                        ID = c.Int(nullable: false, identity: true),
+                        CheckIn = c.DateTime(nullable: false),
+                        Checkout = c.DateTime(nullable: false),
+                        Type = c.String(),
+                        RegNo = c.String(),
+                        TotalTime = c.Time(nullable: false, precision: 7),
+                        Price = c.Int(nullable: false),
+                    })
+                .PrimaryKey(t => t.ID);
+            
+            CreateTable(
                 "dbo.VehiclesModels",
                 c => new
                     {
@@ -28,6 +42,7 @@ namespace GarageMVC.Migrations
         public override void Down()
         {
             DropTable("dbo.VehiclesModels");
+            DropTable("dbo.Receipts");
         }
     }
 }

@@ -45,11 +45,11 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
@@ -144,29 +144,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201712081122257_ParkedVehicles1.cs" />
-    <Compile Include="Migrations\201712081122257_ParkedVehicles1.Designer.cs">
-      <DependentUpon>201712081122257_ParkedVehicles1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201712081124188_ParkedVehicles2.cs" />
-    <Compile Include="Migrations\201712081124188_ParkedVehicles2.Designer.cs">
-      <DependentUpon>201712081124188_ParkedVehicles2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201712081243346_ParkedVehicles3.cs" />
-    <Compile Include="Migrations\201712081243346_ParkedVehicles3.Designer.cs">
-      <DependentUpon>201712081243346_ParkedVehicles3.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201712111051525_ParkedVehicles4.cs" />
-    <Compile Include="Migrations\201712111051525_ParkedVehicles4.Designer.cs">
-      <DependentUpon>201712111051525_ParkedVehicles4.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201712111334151_ParkedVehicles5.cs" />
-    <Compile Include="Migrations\201712111334151_ParkedVehicles5.Designer.cs">
-      <DependentUpon>201712111334151_ParkedVehicles5.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201712111434130_ParkedVehicles6.cs" />
-    <Compile Include="Migrations\201712111434130_ParkedVehicles6.Designer.cs">
-      <DependentUpon>201712111434130_ParkedVehicles6.cs</DependentUpon>
+    <Compile Include="Migrations\201712111517507_ParkedVehicles1.cs" />
+    <Compile Include="Migrations\201712111517507_ParkedVehicles1.Designer.cs">
+      <DependentUpon>201712111517507_ParkedVehicles1.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\VehiclesModel.cs" />
@@ -233,23 +213,8 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201712081122257_ParkedVehicles1.resx">
-      <DependentUpon>201712081122257_ParkedVehicles1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201712081124188_ParkedVehicles2.resx">
-      <DependentUpon>201712081124188_ParkedVehicles2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201712081243346_ParkedVehicles3.resx">
-      <DependentUpon>201712081243346_ParkedVehicles3.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201712111051525_ParkedVehicles4.resx">
-      <DependentUpon>201712111051525_ParkedVehicles4.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201712111334151_ParkedVehicles5.resx">
-      <DependentUpon>201712111334151_ParkedVehicles5.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201712111434130_ParkedVehicles6.resx">
-      <DependentUpon>201712111434130_ParkedVehicles6.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201712111517507_ParkedVehicles1.resx">
+      <DependentUpon>201712111517507_ParkedVehicles1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
