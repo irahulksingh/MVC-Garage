@@ -35,11 +35,11 @@
         <td>
             @Html.DisplayFor(modelItem => item.Model)
         </td>
-        @*<td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
-        </td>*@
+ <td>
+            @Html.ActionLink("Edit - Vehicle", "Edit", new { id=item.ID }) |
+            @Html.ActionLink("Details - Vehicle", "Details", new { id=item.ID }) |
+            @Html.ActionLink("Park out vehicle", "Delete", new { id=item.ID })
+        </td>
     </tr>
 }
 
