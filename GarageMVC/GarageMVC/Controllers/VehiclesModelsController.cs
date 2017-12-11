@@ -31,32 +31,9 @@ namespace GarageMVC.Controllers
             return View(db.VehiclesModel.ToList());
         }
 
-        //public ActionResult Index(string s,string q)
-        //{
-        //    //var vehicles = from r in db.VehiclesModel select r;
-        //    //int id = Convert.ToInt32(Request["search type"]);
-        //    //var SearchParameter = "Searching";
-
-        //    //if (!string.IsNullOrWhiteSpace(s))
-        //    //{
-        //    //    switch (id)
-        //    //    {
-        //    //        case 0:
-        //    //            int Type = int.Parse(s)
-        //    //                vehicles = vehicles.Where(r => r.ID.Equals(Type));
-        //    //            SearchParameter += "ID for' " + s + "'";
-        //    //            break;
-        //    //        default:
-        //    //            break;
-        //    //    }
-
-        //    }
-
-        //    return View(vehicles);
-
-        //}
         public ActionResult ParkedVehicles()
         {
+
             List<VehiclesInGarage> MdVeh = new List<VehiclesInGarage>();
             foreach (var v in db.VehiclesModel.Where(no=> no.NoOfWheels >= 0))
             {
@@ -65,15 +42,7 @@ namespace GarageMVC.Controllers
             return View(MdVeh);
         }
 
-        //public ActionResult CalculateTimeandCost( int ? ID)
-        //{
-        //    VehiclesModel vehmod = db.VehiclesModel.Find(ID);
-        //    TimeSpan TotalTime = (vehmod.CheckOutTime - vehmod.CheckInTime);
-
-        //    return View(TotalTime);
-        //}
-
-        // GET: VehiclesModels/Details/5
+             // GET: VehiclesModels/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)

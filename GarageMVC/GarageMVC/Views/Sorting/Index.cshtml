@@ -3,16 +3,20 @@
 @*@using PagedList.Mvc;*@
 @{
     ViewBag.Title = "Index";
+    ViewBag.sortName = "Typesort";
+    ViewBag.sortName = "Colorsort";
+    ViewBag.sortName = "Modelsort";
+    ViewBag.sortName = "Brandsort";
 }
-<h2>Sorting</h2>
+<h2>Sort vehicles</h2>
 <table class="table table-striped table-bordered">
     <thead>
         <tr>
-            <th>@Html.ActionLink("Type", "Index", new { sortingCriteria = "Type" })</th>
+            <th>@Html.ActionLink("Type", "Index", new { sortingCriteria = ViewBag.Typesort}) &nbsp;&nbsp;<i class="glyphicon 	glyphicon glyphicon-sort-by-attributes-alt"></i></th>
 
-            <th>@Html.ActionLink("Color", "Index", new { sortingCriteria = "Color" })</th>
-            <th>@Html.ActionLink("Model", "Index", new { sortingCriteria = "Model" })</th>
-            <th>@Html.ActionLink("Brand", "Index", new { sortingCriteria = "Brand" })</th>
+            <th>@Html.ActionLink("Color", "Index", new { sortingCriteria = ViewBag.Colorsort }) &nbsp;&nbsp;<i class="glyphicon 	glyphicon glyphicon-sort-by-attributes-alt"></i> </th>
+            <th>@Html.ActionLink("Model", "Index", new { sortingCriteria = ViewBag.Modelsort }) &nbsp;&nbsp;<i class="glyphicon 	glyphicon glyphicon-sort-by-attributes-alt"></i></th>
+            <th>@Html.ActionLink("Brand", "Index", new { sortingCriteria = ViewBag.Brandsort }) &nbsp;&nbsp;<i class="glyphicon 	glyphicon glyphicon-sort-by-attributes-alt"></i></th>
            
     </thead>
     <tbody>

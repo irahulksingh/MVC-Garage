@@ -18,20 +18,37 @@ namespace GarageMVC.Controllers
         // GET: Sorting
         public ActionResult Index(string sortingCriteria)
         {
+            ViewBag.Typesort = sortingCriteria == "Type" ? "Type_Desc" : "Type";
+            ViewBag.Colorsort = sortingCriteria == "Color" ? "Color_Desc" : "Color";
+            ViewBag.Brandsort = sortingCriteria == "Brand" ? "Brand_Desc" : "Brand";
+            ViewBag.Modelsort = sortingCriteria == "Model" ? "Model_Desc" : "Model";
+
             List<GarageMVC.Models.VehiclesModel> VehicleType;
             switch (sortingCriteria)
             {
                 case "Type":
                     VehicleType = db.VehiclesModel.OrderByDescending(t => t.Type.ToString()).ToList();
                     break;
+                case "Type_Desc":
+                    VehicleType = db.VehiclesModel.OrderBy(t => t.Type.ToString()).ToList();
+                    break;
                 case "Color":
                     VehicleType = db.VehiclesModel.OrderByDescending(t => t.Color.ToString()).ToList();
+                    break;
+                case "Color_Desc":
+                    VehicleType = db.VehiclesModel.OrderBy(t => t.Color.ToString()).ToList();
                     break;
                 case "Model":
                     VehicleType = db.VehiclesModel.OrderByDescending(t => t.Model).ToList();
                     break;
+                case "Model_Desc":
+                    VehicleType = db.VehiclesModel.OrderBy(t => t.Model.ToString()).ToList();
+                    break;
                 case "Brand":
                     VehicleType = db.VehiclesModel.OrderByDescending(t => t.Brand).ToList();
+                    break;
+                case "Brand_Desc":
+                    VehicleType = db.VehiclesModel.OrderBy(t => t.Brand.ToString()).ToList();
                     break;
                 default:
                     VehicleType = db.VehiclesModel.OrderBy(t => t.Color).ToList();

@@ -23,7 +23,7 @@ namespace GarageMVC.Models.ViewModel
         [DisplayName("Registration No.:")]
         public string RegNo { get; set; }
 
-        [DisplayFormat(DataFormatString = "{0:hh}", ApplyFormatInEditMode = true)]
+        [DisplayFormat(DataFormatString = "{0:hh\\:mm}", ApplyFormatInEditMode = true)]
         //[DisplayFormat(DataFormatString = "{0:HH:mm}", ApplyFormatInEditMode = false)]
         [DisplayName("Total time in garage:")]
         public TimeSpan TotalTime { get; set; }
