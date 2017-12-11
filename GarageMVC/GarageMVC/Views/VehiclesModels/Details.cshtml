@@ -4,10 +4,10 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
+<h2>Parked vehicles details</h2>
 
 <div>
-    <h4>VehiclesModel</h4>
+    @*<h4>VehiclesModel</h4>*@
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -76,7 +76,12 @@
 
     </dl>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+<div class="form-group">
+    <div class="col-md-offset-2 col-md-10">
+        @Html.ActionLink("Edit - vehicle", "Edit", new { id = Model.ID }, new { @class = "btn btn-info" })
+        
+    </div>
+</div>
+    <div>
     @Html.ActionLink("Back to List", "Index")
-</p>
+</div>

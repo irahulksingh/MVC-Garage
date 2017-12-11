@@ -169,15 +169,11 @@ namespace GarageMVC.Controllers
             TotalTimeandPrice.CheckIn = vehiclesModel.CheckInTime;
             TotalTimeandPrice.Checkout = DateTime.Now;
             TotalTimeandPrice.TotalTime = (DateTime.Now - vehiclesModel.CheckInTime);
-            TotalTimeandPrice.Price = 20;
-
+            TotalTimeandPrice.Price = 40;
             db.VehiclesModel.Remove(vehiclesModel);
-          
             db.SaveChanges();
             return View("DeleteConfirmed", TotalTimeandPrice);
-
-
-                    }
+              }
 
         protected override void Dispose(bool disposing)
         {

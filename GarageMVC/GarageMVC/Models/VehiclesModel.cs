@@ -11,25 +11,34 @@ namespace GarageMVC.Models
     public class VehiclesModel
     {
         public int ID { get; set; }
+
+        [DisplayName("Vehicle type:")]
         public Type Type { get; set; }
-        [DisplayName("Registration No.")]
+        [DisplayName("Registration No.:")]
         [Required(ErrorMessage = "An Registration No. is required")]
         [RegularExpression(@"^[a-zA-Z0-9'' ']+$", ErrorMessage = "Special character should not be entered")]
         public string RegNo { get; set; }
 
+        [DisplayName("Color:")]
         public color Color { get; set; }
+
         [Required(ErrorMessage = "An Model is required")]
         [RegularExpression(@"^[a-zA-Z0-9'' ']+$", ErrorMessage = "Special character should not be entered")]
+        [DisplayName("Model:")]
         public string Model { get; set; }
+
         [Required(ErrorMessage = "An Brand is required")]
         [RegularExpression(@"^[a-zA-Z0-9'' ']+$", ErrorMessage = "Special character should not be entered")]
+        [DisplayName("Brand:")]
         public string Brand { get; set; }
+
         [Range(0, Int32.MaxValue, ErrorMessage = "Value should be greater than or equal to 0")]
-        [DisplayName("No. Of Wheels")]
+        [DisplayName("No. Of Wheels:")]
         public int NoOfWheels { get; set; }
-        [DisplayName("Parked In")]
+
+        [DisplayName("Parked in at:")]
         public DateTime CheckInTime { get; set; }
-        [DisplayName("Parked Out")]
+        [DisplayName("Parked out at:")]
         public DateTime CheckOutTime { get; set; }
     }
 

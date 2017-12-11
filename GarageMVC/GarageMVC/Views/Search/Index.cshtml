@@ -4,7 +4,7 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Search</h2>
+<h2>Search vehicle</h2>
 
 @*<p>
     @Html.ActionLink("Create New", "Create")
@@ -80,11 +80,11 @@
         <td>
             @Html.DisplayFor(modelItem => item.CheckOutTime)
         </td>*@
-        @*<td>*@
-            @*@Html.ActionLink("Edit", "Edit", new { id=item.ID }) |*@
-            @*@Html.ActionLink("Details", "Details", new { id=item.ID }) |*@
-            @*@Html.ActionLink("Check Out Vehicle", "Delete", new { id=item.ID })*@
-        @*</td>*@
+        <td>
+            @Html.ActionLink("Edit - vehicle", "../VehiclesModels/Edit", new { id=item.ID }) |
+            @Html.ActionLink("Details of the vehicle", "../VehiclesModels/Details", new { id=item.ID }) |
+            @Html.ActionLink("Park out vehicle", "../VehiclesModels/Delete", new { id=item.ID })
+        </td>
     </tr>
 }
 
