@@ -26,6 +26,100 @@ namespace GarageMVC.Migrations
             //      new Person { FullName = "Rowan Miller" }
             //    );
             //
+
+            context.VehiclesModel.AddOrUpdate(n => n.RegNo, new Models.VehiclesModel()
+            {
+
+                RegNo = "Car123",
+                //Color = 
+                Brand = "New",
+                Model = "2010",
+                NoOfWheels = 4,
+
+            });
+            context.VehiclesModel.AddOrUpdate(n => n.RegNo, new Models.VehiclesModel()
+            {
+
+                RegNo = "AZP123",
+                //Color = 
+                Brand = "New1",
+                Model = "2002",
+                NoOfWheels = 4,
+
+            });
+            context.VehiclesModel.AddOrUpdate(n => n.RegNo, new Models.VehiclesModel()
+            {
+
+                RegNo = "AZP123",
+                //Color = 
+                Brand = "New2",
+                Model = "20021",
+                NoOfWheels = 4,
+
+            });
+            context.VehiclesModel.AddOrUpdate(n => n.RegNo, new Models.VehiclesModel()
+            {
+
+                RegNo = "AZP123",
+                //Color = 
+                Brand = "New3",
+                Model = "20024",
+                NoOfWheels = 4,
+
+            });
+            context.VehiclesModel.AddOrUpdate(n => n.RegNo, new Models.VehiclesModel()
+            {
+
+                RegNo = "AZP123",
+                //Color = 
+                Brand = "New1",
+                Model = "2002",
+                NoOfWheels = 4,
+
+            });
+            context.VehiclesModel.AddOrUpdate(n => n.RegNo, new Models.VehiclesModel()
+            {
+
+                RegNo = "AZP123",
+                //Color = 
+                Brand = "New",
+                Model = "2002",
+                NoOfWheels = 4,
+
+            });
+            context.VehiclesModel.AddOrUpdate(n => n.RegNo, new Models.VehiclesModel()
+            {
+
+                RegNo = "AZP123",
+                //Color = 
+                Brand = "New",
+                Model = "2002",
+                NoOfWheels = 4,
+
+            });
+            context.VehiclesModel.AddOrUpdate(n => n.RegNo, new Models.VehiclesModel()
+            {
+
+                RegNo = "AZP123",
+                //Color = 
+                Brand = "New",
+                Model = "2002",
+                NoOfWheels = 4,
+
+            });
+            context.VehiclesModel.AddOrUpdate(n => n.RegNo, new Models.VehiclesModel()
+            {
+
+                RegNo = "AZP123",
+                //Color = 
+                Brand = "New",
+                Model = "2002",
+                NoOfWheels = 4,
+
+            });
+
+
+
         }
     }
 }

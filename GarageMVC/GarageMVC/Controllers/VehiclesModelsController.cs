@@ -100,11 +100,15 @@ namespace GarageMVC.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ID,Type,RegNo,Color,Model,Brand,NoOfWheels,CheckInTime,CheckOutTime")] VehiclesModel vehiclesModel)
+        public ActionResult Edit([Bind(Include = "ID,Type,RegNo,Color,Model,Brand,NoOfWheels")] VehiclesModel vehiclesModel)
         {
+            //db.Entry(vehiclesModel).State = EntityState.Modified;
+
             if (ModelState.IsValid)
             {
                 db.Entry(vehiclesModel).State = EntityState.Modified;
+
+                db.Entry(vehiclesModel).Property(x => x.CheckInTime).IsModified = false;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }

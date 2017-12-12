@@ -17,15 +17,15 @@ namespace GarageMVC.Controllers
         {
             var Vehicles = from v in db.VehiclesModel
                            select v;
-            if (!string.IsNullOrEmpty(SearchString))
+            if (!string.IsNullOrWhiteSpace(SearchString))
             {
                  Vehicles = Vehicles.Where(s => s.RegNo.Contains(SearchString));
             }
-          else  if (!string.IsNullOrEmpty(SearchModel))
+            if (!string.IsNullOrWhiteSpace(SearchModel))
             {
                 Vehicles = Vehicles.Where(s => s.Model.Contains(SearchModel));
             }
-           else if (!string.IsNullOrEmpty(Searchbrand))
+            if (!string.IsNullOrWhiteSpace(Searchbrand))
             {
                 Vehicles = Vehicles.Where(s => s.Brand.Contains(Searchbrand));
             }
