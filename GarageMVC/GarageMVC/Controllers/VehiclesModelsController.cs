@@ -73,6 +73,7 @@ namespace GarageMVC.Controllers
             if (ModelState.IsValid)
             {
                 db.VehiclesModel.Add(vehiclesModel);
+                db.Entry(vehiclesModel).Property(c => c.CheckInTime).CurrentValue = DateTime.Now;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -107,7 +108,6 @@ namespace GarageMVC.Controllers
             if (ModelState.IsValid)
             {
                 db.Entry(vehiclesModel).State = EntityState.Modified;
-
                 db.Entry(vehiclesModel).Property(x => x.CheckInTime).IsModified = false;
                 db.SaveChanges();
                 return RedirectToAction("Index");
