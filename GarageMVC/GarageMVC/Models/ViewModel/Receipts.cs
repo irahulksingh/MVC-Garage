@@ -54,6 +54,7 @@ namespace GarageMVC.Models.ViewModel
             {
                 Price = 20 * Convert.ToInt32(TTforPricing) + 20;
 
+
             }
 
 
