@@ -68,6 +68,7 @@
             @Html.LabelFor(model => model.CheckInTime, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.TextBoxFor(model => model.CheckInTime, new {@Value = @DateTime.Now.ToString("yyyy/MM/dd HH:mm"), @class = "form-control" ,@readonly = "readonly"}   )      
+                ( YYYY-MM-DD HH:mm )
                   @*@Html.ValidationMessageFor(model => model.CheckInTime, "", new { @class = "text-danger" })*@
             </div>
         </div>

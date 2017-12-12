@@ -45,16 +45,16 @@ namespace GarageMVC.Controllers
                     VehicleType = db.VehiclesModel.OrderByDescending(t => t.Model).ToList();
                     break;
                 case "Model_Desc":
-                    VehicleType = db.VehiclesModel.OrderBy(t => t.Model.ToString()).ToList();
+                    VehicleType = db.VehiclesModel.OrderBy(t => t.Model).ToList();
                     break;
                 case "Brand":
                     VehicleType = db.VehiclesModel.OrderByDescending(t => t.Brand).ToList();
                     break;
                 case "Brand_Desc":
-                    VehicleType = db.VehiclesModel.OrderBy(t => t.Brand.ToString()).ToList();
+                    VehicleType = db.VehiclesModel.OrderBy(t => t.Brand).ToList();
                     break;
                 default:
-                    VehicleType = db.VehiclesModel.OrderBy(t => t.Color).ToList();
+                    VehicleType = db.VehiclesModel.OrderByDescending(t => t.Type.ToString()).ToList();
 
                     break;
             }
@@ -69,9 +69,9 @@ namespace GarageMVC.Controllers
             }
 
             ViewBag.CurrentFilter = searchString;
-            int pageSize = 10;
+            int pageSize = 5;
             int pageNumber = (page ?? 1);
-            return View(VehicleType.OrderBy(i => i.Type).ToPagedList(page ?? 1, 10));
+            return View(VehicleType.OrderBy(i => i.Type).ToPagedList(page ?? 1, 5));
         }
        
 
