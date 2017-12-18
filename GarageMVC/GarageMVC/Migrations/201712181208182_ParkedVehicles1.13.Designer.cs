@@ -13,7 +13,7 @@ namespace GarageMVC.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "201712181002235_ParkedVehicles1.13"; }
+            get { return "201712181208182_ParkedVehicles1.13"; }
         }
         
         string IMigrationMetadata.Source

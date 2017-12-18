@@ -3,7 +3,7 @@ namespace GarageMVC.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class ParkedVehicles113 : DbMigration
+    public partial class ParkedVehicles117 : DbMigration
     {
         public override void Up()
         {
@@ -16,9 +16,11 @@ namespace GarageMVC.Migrations
                         MemberEmail = c.String(),
                         MemberPhone = c.String(),
                         Address = c.String(),
-                        VehicleType = c.String(),
+                        VehicleType_ID = c.Int(),
                     })
-                .PrimaryKey(t => t.Id);
+                .PrimaryKey(t => t.Id)
+                .ForeignKey("dbo.VehiclesModels", t => t.VehicleType_ID)
+                .Index(t => t.VehicleType_ID);
             
             CreateTable(
                 "dbo.VehiclesModels",
@@ -36,10 +38,23 @@ namespace GarageMVC.Migrations
                     })
                 .PrimaryKey(t => t.ID);
             
+            CreateTable(
+                "dbo.VehiclesTypes",
+                c => new
+                    {
+                        ID = c.Int(nullable: false, identity: true),
+                        RegNo = c.String(),
+                        VehicleType = c.String(),
+                    })
+                .PrimaryKey(t => t.ID);
+            
         }
         
         public override void Down()
         {
+            DropForeignKey("dbo.Members", "VehicleType_ID", "dbo.VehiclesModels");
+            DropIndex("dbo.Members", new[] { "VehicleType_ID" });
+            DropTable("dbo.VehiclesTypes");
             DropTable("dbo.VehiclesModels");
             DropTable("dbo.Members");
         }

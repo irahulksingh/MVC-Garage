@@ -144,13 +144,18 @@
     <Compile Include="Controllers\SearchController.cs" />
     <Compile Include="Controllers\SortingController.cs" />
     <Compile Include="Controllers\VehiclesModelsController.cs" />
+    <Compile Include="Controllers\VehiclesTypesController.cs" />
     <Compile Include="DataAccessLayer\DatabaseConnection.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201712181002235_ParkedVehicles1.13.cs" />
-    <Compile Include="Migrations\201712181002235_ParkedVehicles1.13.Designer.cs">
-      <DependentUpon>201712181002235_ParkedVehicles1.13.cs</DependentUpon>
+    <Compile Include="Migrations\201712181206514_ParkedVehicles1.17.cs" />
+    <Compile Include="Migrations\201712181206514_ParkedVehicles1.17.Designer.cs">
+      <DependentUpon>201712181206514_ParkedVehicles1.17.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201712181208182_ParkedVehicles1.13.cs" />
+    <Compile Include="Migrations\201712181208182_ParkedVehicles1.13.Designer.cs">
+      <DependentUpon>201712181208182_ParkedVehicles1.13.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Members.cs" />
@@ -158,7 +163,6 @@
     <Compile Include="Models\VehiclesType.cs" />
     <Compile Include="Models\ViewModel\Receipts.cs" />
     <Compile Include="Models\ViewModel\VehiclesInGarage.cs" />
-    <Compile Include="Models\ViewModel\VehicleType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -217,6 +221,11 @@
     <Content Include="Views\Members\Details.cshtml" />
     <Content Include="Views\Members\Edit.cshtml" />
     <Content Include="Views\Members\Index.cshtml" />
+    <Content Include="Views\VehiclesTypes\Create.cshtml" />
+    <Content Include="Views\VehiclesTypes\Delete.cshtml" />
+    <Content Include="Views\VehiclesTypes\Details.cshtml" />
+    <Content Include="Views\VehiclesTypes\Edit.cshtml" />
+    <Content Include="Views\VehiclesTypes\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -234,8 +243,11 @@
     <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201712181002235_ParkedVehicles1.13.resx">
-      <DependentUpon>201712181002235_ParkedVehicles1.13.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201712181206514_ParkedVehicles1.17.resx">
+      <DependentUpon>201712181206514_ParkedVehicles1.17.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712181208182_ParkedVehicles1.13.resx">
+      <DependentUpon>201712181208182_ParkedVehicles1.13.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

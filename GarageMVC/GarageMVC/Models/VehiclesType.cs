@@ -8,7 +8,6 @@ namespace GarageMVC.Models
     public class VehiclesType
     {
         public int ID { get; set; }
-        public string RegNo { get; set; }
         public string VehicleType { get; set; }
     }
 }
