@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -13,7 +14,7 @@ namespace GarageMVC.Models
         public int ID { get; set; }
 
         [DisplayName("Vehicle type:")]
-        public Type Type { get; set; }
+        public Type VehicleType { get; set; }
         [DisplayName("Registration No.:")]
         [Required(ErrorMessage = "An Registration No. is required")]
         [RegularExpression(@"^[a-zA-Z0-9'' ']+$", ErrorMessage = "Special character should not be entered")]
@@ -37,8 +38,10 @@ namespace GarageMVC.Models
         public int NoOfWheels { get; set; }
 
         [DisplayName("Parked in at:")]
+        [Column(TypeName ="DateTime2")]
         public DateTime CheckInTime { get; set; }
         [DisplayName("Parked out at:")]
+        [Column(TypeName = "DateTime2")]
         public DateTime CheckOutTime { get; set; }
     }
 

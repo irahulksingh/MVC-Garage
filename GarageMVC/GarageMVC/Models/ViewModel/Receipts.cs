@@ -41,7 +41,7 @@ namespace GarageMVC.Models.ViewModel
             ID = VehicleRec.ID;
             CheckIn = VehicleRec.CheckInTime;
             Checkout = DateTime.Now;
-            Type = VehicleRec.Type.ToString();
+            Type = VehicleRec.VehicleType.ToString();
             RegNo = VehicleRec.RegNo;
             TotalTime = DateTime.Now - VehicleRec.CheckInTime;
             double TTforPricing = TotalTime.Hours;

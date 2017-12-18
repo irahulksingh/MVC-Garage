@@ -140,6 +140,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\MembersController.cs" />
     <Compile Include="Controllers\SearchController.cs" />
     <Compile Include="Controllers\SortingController.cs" />
     <Compile Include="Controllers\VehiclesModelsController.cs" />
@@ -147,14 +148,17 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201712180912353_ParkedVehicles1.0.cs" />
-    <Compile Include="Migrations\201712180912353_ParkedVehicles1.0.Designer.cs">
-      <DependentUpon>201712180912353_ParkedVehicles1.0.cs</DependentUpon>
+    <Compile Include="Migrations\201712181002235_ParkedVehicles1.13.cs" />
+    <Compile Include="Migrations\201712181002235_ParkedVehicles1.13.Designer.cs">
+      <DependentUpon>201712181002235_ParkedVehicles1.13.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Members.cs" />
     <Compile Include="Models\VehiclesModel.cs" />
+    <Compile Include="Models\VehiclesType.cs" />
     <Compile Include="Models\ViewModel\Receipts.cs" />
     <Compile Include="Models\ViewModel\VehiclesInGarage.cs" />
+    <Compile Include="Models\ViewModel\VehicleType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -203,6 +207,16 @@
     <Content Include="Views\Search\Index.cshtml" />
     <Content Include="Views\Sorting\Index.cshtml" />
     <Content Include="Views\VehiclesModels\DeleteConfirmed.cshtml" />
+    <Content Include="Views\VehiclesModels1\Create.cshtml" />
+    <Content Include="Views\VehiclesModels1\Delete.cshtml" />
+    <Content Include="Views\VehiclesModels1\Details.cshtml" />
+    <Content Include="Views\VehiclesModels1\Edit.cshtml" />
+    <Content Include="Views\VehiclesModels1\Index.cshtml" />
+    <Content Include="Views\Members\Create.cshtml" />
+    <Content Include="Views\Members\Delete.cshtml" />
+    <Content Include="Views\Members\Details.cshtml" />
+    <Content Include="Views\Members\Edit.cshtml" />
+    <Content Include="Views\Members\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -220,8 +234,8 @@
     <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201712180912353_ParkedVehicles1.0.resx">
-      <DependentUpon>201712180912353_ParkedVehicles1.0.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201712181002235_ParkedVehicles1.13.resx">
+      <DependentUpon>201712181002235_ParkedVehicles1.13.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
